@@ -50,5 +50,16 @@ with open('emotions.txt', 'r') as file:
             emotion_list.append(emotion)
 
 print(emotion_list)
+
+# Just visulaizing all emotions exsited in the text 
+from collections import Counter
 w = Counter(emotion_list)
 print(w)
+
+# Plotting the emotions on the graph
+import matplotlib.pyplot as plt 
+fig, ax1 = plt.subplots()
+ax1.bar(w.keys(), w.values())
+fig.autofmt_xdate()
+plt.savefig('graph.png')
+plt.show()
